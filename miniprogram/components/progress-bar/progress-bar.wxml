@@ -1,0 +1,20 @@
+<view class="container">
+  <text class="time">{{showTime.currentTime}}</text>
+  <view class="control">
+  <!-- movable-area代表可移动的区域 -->
+    <movable-area class="movable-area">
+    <!-- movable-view代表那个圆圈且必须是movable-area直接子节点 -->
+    <!-- direction滑动的方向  damping阻尼系数（数值越大滑动的越流畅）
+    x：控制水平移动的值-->
+      <movable-view direction="horizontal" class="movable-view"
+        damping="1000" x="{{movableDis}}" bindchange="onChange"
+        bindtouchend="onTouchEnd"
+      />
+    </movable-area>
+    <!-- progress代表当前进度 stroke-width：进度粗细 
+    activeColor：移动之后后面的颜色 percent：表示当前移动多少（100份）-->
+    <progress stroke-width="4" backgroundColor="#969696"
+    activeColor="#fff" percent="{{progress}}"></progress>
+  </view>
+  <text class="time">{{showTime.totalTime}}</text>
+</view>

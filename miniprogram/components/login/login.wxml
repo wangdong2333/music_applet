@@ -1,0 +1,6 @@
+<x-bottom-modal modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <!-- open-type小程序的一个开放能力 当他等于getUserInfo时作用为获取当前用户的授权信息 bindgetuserinfo为对应的事件处理函数-->
+    <button class="login" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">获取微信授权信息</button>
+  </view>
+</x-bottom-modal>

@@ -1,0 +1,16 @@
+<!-- indicator-dots 代表三个小点点 autoplay：是否自动播放   interval：间隔多少秒播下一个  duration：一张图片从组到右多长时间-->
+<!-- swiper小程序自带的轮播图组件 -->
+<swiper indicator-dots="true" autoplay="true" interval="2000" duration="1000">
+  <block wx:for="{{swiperImgUrls}}" wx:key="url">
+    <swiper-item>
+      <!-- mode的参数：widthFix 等比例缩放使图片完全展示出来 -->
+      <image src="{{item.url}}" mode="widthFix" class="img"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="playlist-container">
+  <block wx:for="{{playlist}}" wx:key="index">
+    <x-playlist playlist="{{item}}"></x-playlist>
+  </block>
+</view>
